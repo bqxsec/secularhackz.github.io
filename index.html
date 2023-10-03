@@ -1,80 +1,59 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecularHackz.Org Çok Yakında!</title>
+    <title>SecularHackz.Org</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             overflow: hidden;
             background-color: #000;
-            color: #00ff00;
-            font-family: 'Matrix Code NFI', 'Courier New', monospace;
+            color: #fff;
+            font-family: 'Courier New', monospace;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
-        .matrix-effect {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-            z-index: -1;
-        }
         .overlay {
+            position: relative;
             background-color: rgba(0, 0, 0, 0.8);
             color: #fff;
             padding: 20px;
             border-radius: 5px;
             text-align: center;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
         }
-        .matrix-code {
+        .ataturk {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://c4.wallpaperflare.com/wallpaper/783/19/815/mustafa-kemal-ataturk-wallpaper-preview.jpg'); /* Atatürk resminin bağlantısını buraya yapıştırın */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3; /* Şeffaflık seviyesini buradan ayarlayın */
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        p {
             font-size: 24px;
-            line-height: 1;
-            white-space: nowrap;
-            overflow: hidden;
-            animation: matrix-rain 5s linear infinite;
-        }
-        @keyframes matrix-rain {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(-100%);
-            }
         }
     </style>
 </head>
 <body>
-    <div class="matrix-effect" id="matrix-effect"></div>
+    <div class="ataturk"></div>
     <div class="overlay">
-        <h1>Coming - BQX Security</h1>
+        <h1>Coming Soon</h1>
+        <p>
+            Created by BQX
+        </p>
     </div>
-
-    <script>
-        const matrixEffect = document.getElementById("matrix-effect");
-
-        function generateMatrixCode() {
-            const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            let code = "";
-
-            for (let i = 0; i < 100; i++) {
-                code += characters.charAt(Math.floor(Math.random() * characters.length));
-            }
-
-            const matrixCode = document.createElement("div");
-            matrixCode.classList.add("matrix-code");
-            matrixCode.textContent = code;
-
-            matrixEffect.appendChild(matrixCode);
-        }
-
-        setInterval(generateMatrixCode, 100); // Her 0.1 saniyede bir kodları güncelle
-    </script>
 </body>
 </html>
